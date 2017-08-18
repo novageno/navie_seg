@@ -28,7 +28,7 @@ def train_net(args,ctx):
 
     label_names = train_data.provide_label[0]
     sym = get_symbol_180()
-    print(sym.infer_shape(data=(32,3,512,512))[1])
+    #print(sym.infer_shape(data=(32,3,512,512))[1])
     mod = mx.mod.Module(sym,data_names=('data',),label_names=('label',),
                         logger=logger,context=ctx)
     eval_metric = DiceMetric()
@@ -60,7 +60,7 @@ def arg_parse():
 def main():
     args = arg_parse()
     print ('called with argument')
-    ctx = mx.cpu()
+    ctx = mx.gpu(1)
     train_net(args,ctx)
 
 if __name__ =="__main__":

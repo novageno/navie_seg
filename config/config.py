@@ -8,11 +8,11 @@ config.dataset.imageset = 'trainval'
 config.dataset.root_path = './data/'
 config.dataset.train_folds = 'fold1,fold2,fold3,fold4,fold5,fold6,fold7,fold8,fold9'
 config.dataset.val_folds = 'fold10'
-config.dataset.data_path = '/home/genonova/u-net/data/faster_rcnn_data/v9'
+config.dataset.data_path = './data/faster_rcnn_data/v9'
 config.dataset.output_path = './output'
 
 config.TRAIN = easydict()
-config.TRAIN.BATCH_SIZE = 32
+config.TRAIN.BATCH_SIZE = 4
 config.TRAIN.lr = 1e-3
 config.TRAIN.warmup_lr = 0.00005
 config.TRAIN.lr_step = '15'
